@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 
 namespace road_lighting {
     class Road
@@ -29,7 +30,7 @@ namespace road_lighting {
     class AreaFactory
     {
     public:
-        virtual Area *createArea(int id) = 0;
+        virtual std::shared_ptr<Area> createArea(int id) = 0;
         virtual ~AreaFactory() {}
     };
 

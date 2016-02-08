@@ -1,6 +1,7 @@
 #pragma once
 
 #include "interface.h"
+#include <memory>
 
 namespace road_lighting {
     class StaightAreaFactory : public AreaFactory
@@ -8,6 +9,6 @@ namespace road_lighting {
     public:
         StaightAreaFactory();
         virtual ~StaightAreaFactory() {}
-        virtual Area* createArea(int id) override;
+        virtual std::shared_ptr<Area> createArea(int id) override;
     };
 }

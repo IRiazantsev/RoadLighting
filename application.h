@@ -16,7 +16,7 @@ namespace road_lighting {
         ~Application();
         Application& operator=(Application&);
     private:
-        std::vector<std::shared_ptr<Project>> projects_;
+        std::vector<ProjectType> projects_;
     };
 }
 

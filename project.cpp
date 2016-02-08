@@ -11,15 +11,12 @@ Project::Project(int id):id_(id)
 
 Project::~Project()
 {
-    for(auto area : areas_) {
-        delete area;
-    }
     areas_.clear();
 }
 
-Area* Project::createArea(AreaType type)
+std::shared_ptr<Area> Project::createArea(AreaType type)
 {
-    Area* area = nullptr;
+    std::shared_ptr<Area> area;
     switch (type) {
     case AreaType::StraightRoad :
         {
@@ -33,6 +30,16 @@ Area* Project::createArea(AreaType type)
 
     if (area) areas_.push_back(area);
     return area;
+}
+
+std::shared_ptr<Area> Project::getArea(int id)
+{
+    for(std::shared_ptr<Area> item : areas_) {
+         if (id == item->getID()) {
+            return item;
+         }
+    }
+    return nullptr;
 }
 
 void Project::initialize()

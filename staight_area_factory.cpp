@@ -8,8 +8,9 @@ StaightAreaFactory::StaightAreaFactory()
 
 }
 
-Area* StaightAreaFactory::createArea(int id)
+std::shared_ptr<Area> StaightAreaFactory::createArea(int id)
 {
-    return new StraightArea(id);
+    std::shared_ptr<Area> area = std::make_shared<StraightArea>(id);
+    return area;
 }
 
