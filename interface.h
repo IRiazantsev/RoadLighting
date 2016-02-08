@@ -1,7 +1,17 @@
 #pragma once
 #include <memory>
+#include <iostream>
+#include <fstream>
 
 namespace road_lighting {
+
+    class Storage
+    {
+    public:
+        virtual bool save(std::ofstream& fout) = 0;
+        virtual bool open() = 0;
+    };
+
     class Road
     {
     public:

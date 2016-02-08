@@ -2,6 +2,8 @@
 #include "utilities.h"
 using namespace road_lighting;
 
+char Application::signature[] = "ROADLIGHT";
+
 Application::Application()
 {
 
@@ -33,4 +35,16 @@ std::shared_ptr<Project> Application::getProject(int id)
          }
     }
     return nullptr;
+}
+
+bool Application::save(std::ofstream& fout)
+{
+    fout << signature;
+
+    return true;
+}
+
+bool Application::open()
+{
+    return true;
 }
