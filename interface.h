@@ -40,7 +40,7 @@ namespace road_lighting {
     class AreaFactory
     {
     public:
-        virtual std::shared_ptr<Area> createArea(int id) = 0;
+        virtual std::unique_ptr<Area> createArea(int id) = 0;
         virtual ~AreaFactory() {}
     };
 

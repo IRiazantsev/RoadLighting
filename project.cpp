@@ -14,9 +14,9 @@ Project::~Project()
     areas_.clear();
 }
 
-std::shared_ptr<Area> Project::createArea(AreaType type)
+ std::unique_ptr<Area> Project::createArea(AreaType type)
 {
-    std::shared_ptr<Area> area;
+     std::unique_ptr<Area> area;
     switch (type) {
     case AreaType::StraightRoad :
         {

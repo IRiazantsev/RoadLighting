@@ -13,7 +13,7 @@ namespace road_lighting {
         virtual ~Project();
     public:
         void initialize();
-        std::shared_ptr<Area> createArea(AreaType type);
+         std::unique_ptr<Area> createArea(AreaType type);
         std::shared_ptr<Area> getArea(int id);
         int getID() {return id_;}
     protected:

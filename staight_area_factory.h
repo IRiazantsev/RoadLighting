@@ -9,6 +9,6 @@ namespace road_lighting {
     public:
         StaightAreaFactory();
         virtual ~StaightAreaFactory() {}
-        virtual std::shared_ptr<Area> createArea(int id) override;
+        virtual  std::unique_ptr<Area> createArea(int id) override;
     };
 }
